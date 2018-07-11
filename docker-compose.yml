@@ -1,0 +1,41 @@
+version: "3"
+services:
+  apache:
+    build: 
+        context: .
+    volumes:
+       - ./APP:/var/www/html
+#       - ./config/php.ini:/usr/local/etc/php/
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+    depends_on:
+      - db  
+    links:
+      - db
+#    command: 
+#      - docker-php-ext-install mysqli pdo pdo_mysql
+#        start:
+#            - php echo start
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass1234#
+      MYSQL_DATABASE: symfony_ankieta
+
+    networks:
+      webnet:
+        aliases: 
+            - db
+      
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  webnet:
+    driver: bridge

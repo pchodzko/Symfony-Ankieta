@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SurveyAnswer index{% endblock %}
+
+{% block body %}
+    {% set pages = count / 10 %}
+    {% set page = app.request.get('page') %}
+    {% if app.request.get('_sort') == 'ASC' %}
+        {%set sort = 'DESC'%}
+    {%else%}
+        {%set sort = 'ASC'%} 
+    {%endif%}
+    <h1>SurveyAnswer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{%trans%}backend.id{%endtrans%}</th>
+                <th><a href ="{{ path('survey_answer_index_list', app.request.get('_route_params')|merge({'_by': 'date'}) ) }}">{%trans%}backend.dob{%endtrans%}</a></th>
+                <th>{%trans%}backend.firstname{%endtrans%}</th>
+                <th><a href ="{{ path('survey_answer_index_list', app.request.get('_route_params')|merge({'_by': 'name'}) ) }}">{%trans%}backend.lastname{%endtrans%}</a></th>
+                <th>{%trans%}backend.fullname{%endtrans%}</th>
+                <th>{%trans%}backend.username{%endtrans%}</th>
+                <th>{%trans%}backend.createdat{%endtrans%}</th>
+                {#<th>{%trans%}backend.isactive{%endtrans%}</th>
+                <th>{%trans%}backend.action{%endtrans%}#}<th><a href ="{{ path('survey_answer_index_list', app.request.get('_route_params')|merge({'_sort': sort}) ) }}">{{app.request.get('_sort')}}</a></th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for survey_answer in survey_answers %}
+                <tr>
+                    <td>{{ survey_answer.id }}</td>
+                    <td>{{ survey_answer.dob ? survey_answer.dob|date('Y-m-d') : '' }}</td>
+                    <td>{{ survey_answer.firstName }}</td>
+                    <td>{{ survey_answer.lastName }}</td>
+                    <td>{{ survey_answer.fullName }}</td>
+                    <td>{{ survey_answer.user.username }}</td>
+                    <td>{{ survey_answer.createdAt ? survey_answer.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    {#<td>{{ survey_answer.isActive ? 'Yes' : 'No' }}</td>
+                    <td>
+                        <a href="{{ path('survey_answer_show', {'id': survey_answer.id}) }}">show</a>
+                        <a href="{{ path('survey_answer_edit', {'id': survey_answer.id}) }}">edit</a>
+                    </td>#}
+                    <td></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if  pages  %}
+        <nav aria-label=" navigation ">
+            <ul class="pagination justify-content-end">
+                {% for i in 0..pages %}
+                    <li class="page-item {%if page == loop.index0 %} disabled active {%endif%}"><a class="page-link " href="{{ path('survey_answer_index_list', app.request.get('_route_params')|merge({'page': loop.index0}) ) }}">{{loop.index}}</a></li>
+                    {%endfor %}
+            </ul>
+        </nav>
+    {%endif %}
+    {#<a href="{{ path('survey_answer_new') }}">Create new</a>#}
+{% endblock %}

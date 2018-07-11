@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% trans %}home.title{% endtrans %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('build/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom ">
+        <a class="navbar-brand" href="{{path('ankieta')}}">{% trans %}home.nav.header{% endtrans %}</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{path('survey_answer_index_list')}}">Wyniki</a>
+        {%else%}
+            <a href="{{path('fos_user_registration_register')}}">{%trans%}main.please.register{%endtrans%}</a>
+            <a href="{{path('fos_user_security_login')}}">{%trans%}main.please.login{%endtrans%}</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        <div class=" justify-content-lg-center pt-3">
+        {% block body %}{% endblock %}
+    </div>
+</div>
+<script src="{{ asset('build/app.js') }}"></script>
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

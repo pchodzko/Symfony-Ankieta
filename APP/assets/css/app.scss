@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-06-26, 00:17:02
+    Author     : PrzemyslawC
+*/
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+ // set if you're also including font-awesome
+ // $fa-font-path: "~font-awesome/fonts";
+//@import "node_modules/bootstrap/scss/grid";
+//@import '~bootstrap/scss/';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/root";
+//@import "~bootstrap/scss/normalize";
+@import "~bootstrap/scss/print";
+//@import "~bootstrap/scss/glyphicons";
+
+
+//@import "~bootstrap/scss/scaffolding";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons"; 
+@import "~bootstrap/scss/card"; 
+@import "~bootstrap/scss/pagination"; 
+//@import "~bootstrap/scss/input-groups";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/utilities";
+//@import "~bootstrap/scss/responsive-utilities";
+//@import "~bootstrap/scss/bootstrap";

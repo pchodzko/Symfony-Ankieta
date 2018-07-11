@@ -1,0 +1,18 @@
+home.nav.header: 'Symfony ankieta'
+home.title: 'Symfony ankieta'
+register.header: Rejestracja
+login.header: Logowanie
+backend.id: id
+backend.dob: 'data urodzenia'
+backend.firstname: imię
+backend.lastname: nazwisko
+backend.fullname: 'imię i nazwisko'
+backend.username: username
+backend.createdat: 'data utworzenia'
+backend.isactive: aktywny
+backend.action: akcje
+main.header: Zapraszamy do udziału w ankiecie
+main.survay: Przejdź do ankiety
+main.please.register: Zarejestruj się
+main.please.login: lub Zaloguj
+front.survey.header: Ankieta

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Form/NameType.php</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/assets/css/app.css</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/bundles/FOSUserBundle/Security/login.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/bundles/FOSUserBundle/Registration/register.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/bundles/FOSUserBundle/Security/login_content.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/base.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/assets/css/app.scss</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Entity/User.php</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/config/services.yaml</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/ankieta_start/survey.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/webpack.config.js</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/package.json</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Entity/SurveyAnswer.php</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/bundles/FOSUserBundle/Registration/register_content.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Form/DobType.php</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/bundles/FOSUserBundle/Registration/confirmed.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/assets/js/app.js</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/templates/ankieta_start/index.html.twig</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/config/packages/doctrine.yaml</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Form/SurveyType.php</file>
+            <file>file:/D:/Docker/Symfony-Ankieta/APP/src/Controller/AnkietaStartController.php</file>
+        </group>
+    </open-files>
+</project-private>

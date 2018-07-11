@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+    <div class="row justify-content-center">
+        <div class="col-10 ">
+            <div class="card text-center">
+                <div class="card-header"> {%trans%}main.header{%endtrans%}
+                </div>
+                <div class="card-body">
+                    {% for message in app.flashes('notice') %}
+                        <div class="flash-notice">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% if is_granted('ROLE_USER') %}
+                        <a href="{{path('ankieta_start')}}">{%trans%}main.survay{%endtrans%}</a>
+                        {%else%}
+                             <a href="{{path('fos_user_registration_register')}}">{%trans%}main.please.register{%endtrans%}</a>
+                            <a href="{{path('fos_user_security_login')}}">{%trans%}main.please.login{%endtrans%}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
