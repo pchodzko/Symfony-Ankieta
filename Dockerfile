@@ -1,6 +1,6 @@
 FROM php:7.2.6-apache
 
-
+#VOLUME
 # Install PHP extensions and PECL modules.
 RUN buildDeps=" \
         default-libmysqlclient-dev \
@@ -31,10 +31,30 @@ RUN buildDeps=" \
     && docker-php-ext-enable memcached.so redis.so \
     && apt-get purge -y --auto-remove $buildDeps \
     && rm -r /var/lib/apt/lists/* \
-    && a2enmod rewrite
+    && a2enmod rewrite \
+	&& apt-get update && apt-get install -my wget gnupg
+
+#RUN apt-get update && apt-get install -my wget gnupg
+
 
 # Install Composer.
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && ln -s $(composer config --global home) /root/composer
-ENV PATH $PATH:/root/composer/vendor/bin
-RUN [ "php", "/var/www/html/bin/console doctrine:schema:update --force" ]
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+#    && ln -s $(composer config --global home) /root/composer
+#ENV PATH $PATH:/root/composer/vendor/bin
+
+# Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+	&& apt-get install -y nodejs
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update && apt-get install -y yarn
+	
+
+
+WORKDIR /var/www/html/
+#RUN composer install --ignore-platform-reqs --no-scripts -d /var/www/html/
+
+#RUN yarn install --force
+#RUN yarn run build

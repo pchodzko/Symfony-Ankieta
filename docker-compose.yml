@@ -1,7 +1,7 @@
 version: "3"
 services:
   apache:
-    build: 
+    build:
         context: .
     volumes:
        - ./APP:/var/www/html
@@ -14,6 +14,7 @@ services:
       - db  
     links:
       - db
+#    command: composer install  --ignore-platform-reqs --no-scripts -d /var/www/html
 #    command: 
 #      - docker-php-ext-install mysqli pdo pdo_mysql
 #        start:
