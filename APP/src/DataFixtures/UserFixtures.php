@@ -41,6 +41,26 @@ class UserFixtures extends Fixture {
             $this->addReference(self::ADMIN_USER_REFERENCE . $i, $user);
         }
 
+
+
+            $user = new User();
+            $password = $this->encoder->encodePassword($user, 'przemek');
+            $user->setEmail('przemek@localhos.st');
+            $user->setUsername('przemek');
+            $user->setPassword($password);
+            $user->setEnabled(true);
+            $manager->persist($user);
+       
+            $user = new User();
+            $password = $this->encoder->encodePassword($user, 'admin');
+            $user->setEmail('admin@localhos.st');
+            $user->setUsername('admin');
+            $user->setPassword($password);
+            $user->setEnabled(true);
+            $user->addRole('ROLE_ADMIN');
+            $manager->persist($user);
+            
+       
         $manager->flush();
     }
 
