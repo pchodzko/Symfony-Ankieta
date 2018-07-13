@@ -41,7 +41,6 @@ class SurveyAnswerController extends Controller
     {
         $answer=$surveyAnswerRepository->findSortedBy($_sort,$_by,$page);
         $paginator = new Paginator($answer, $fetchJoinCollection = true);
-dump(count($paginator));
         return $this->render('survey_answer/answers.html.twig', ['survey_answers' => $paginator,'count'=>count($paginator)]);
     }
     /**
