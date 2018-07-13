@@ -13,6 +13,7 @@ backend.isactive: aktywny
 backend.action: akcje
 main.header: Zapraszamy do udziału w ankiecie
 main.survay: Przejdź do ankiety
-main.please.register: Zarejestruj się
-main.please.login: lub Zaloguj
+main.register: Zarejestruj się
+main.login: Logowanie
+main.logout: Wyloguj
 front.survey.header: Ankieta

@@ -11,10 +11,13 @@
     <nav class="navbar navbar-expand-lg navbar-light border-bottom ">
         <a class="navbar-brand" href="{{path('ankieta')}}">{% trans %}home.nav.header{% endtrans %}</a>
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{path('survey_answer_index_list')}}">Wyniki</a>
+            <a class="nav-item nav-link" href="{{path('survey_answer_index_list')}}">Wyniki</a>
+            <a class="nav-item nav-link" href="{{path('fos_user_security_logout')}}">{%trans%}main.logout{%endtrans%}</a>
+        {%elseif is_granted('ROLE_USER')%}
+            <a class="nav-item nav-link" href="{{path('fos_user_security_logout')}}">{%trans%}main.logout{%endtrans%}</a>
         {%else%}
-            <a href="{{path('fos_user_registration_register')}}">{%trans%}main.please.register{%endtrans%}</a>
-            <a href="{{path('fos_user_security_login')}}">{%trans%}main.please.login{%endtrans%}</a>
+            <a class="nav-item nav-link" href="{{path('fos_user_registration_register')}}">{%trans%}main.register{%endtrans%}</a>
+            <a class="nav-item nav-link" href="{{path('fos_user_security_login')}}">{%trans%}main.login{%endtrans%}</a>
         {% endif %}
     </nav>
     <div class="container">

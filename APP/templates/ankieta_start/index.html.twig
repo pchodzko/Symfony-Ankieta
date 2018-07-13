@@ -18,8 +18,8 @@
                     {% if is_granted('ROLE_USER') %}
                         <a href="{{path('ankieta_start')}}">{%trans%}main.survay{%endtrans%}</a>
                         {%else%}
-                             <a href="{{path('fos_user_registration_register')}}">{%trans%}main.please.register{%endtrans%}</a>
-                            <a href="{{path('fos_user_security_login')}}">{%trans%}main.please.login{%endtrans%}</a>
+                            <a href="{{path('fos_user_registration_register')}}">{%trans%}main.register{%endtrans%}</a><br>
+                            <a href="{{path('fos_user_security_login')}}">{%trans%}main.login{%endtrans%}</a>
                     {% endif %}
                 </div>
             </div>
