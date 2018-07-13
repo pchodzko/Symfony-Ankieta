@@ -9,6 +9,10 @@ const $ = require('jquery');
 require('jquery-ui-bundle');
 require('jquery-validation');
 require('bootstrap');
+const Translator = require('bazinga-translator');
+global.Translator = Translator;
+require('./translations/config');
+require('./translations/messages/pl');
 
 $(document).ready(function () {
     $('#survey_next').click(function (e) {
@@ -57,19 +61,19 @@ $(document).ready(function () {
         },
         messages: {
             "iflow_RestBundle_customer[firstName]": {
-                polishlettersonly: "{% trans %}form.validator.first_name.lettersonly{% endtrans %}",
-                required: "{% trans %}form.validator.first_name.required{% endtrans %}",
-                minlength: "{% trans %}form.validator.first_name.minLength{% endtrans %}"
+                polishlettersonly: Translator.trans('form.validator.first_name.lettersonly', {}, 'messages'),
+                required: Translator.trans('form.validator.first_name.required', {}, 'messages'),
+                minlength: Translator.trans('form.validator.first_name.required', {}, 'messages')
             },
             "iflow_RestBundle_customer[lastName]": {
-                polishlettersonly: "{% trans %}form.validator.last_name.lettersonly{% endtrans %}",
-                required: "{% trans %}form.validator.last_name.required{% endtrans %}",
-                minlength: "{% trans %}form.validator.last_name.minLength{% endtrans %}"
+                polishlettersonly:Translator.trans('form.validator.last_name.lettersonly', {}, 'messages'),
+                required: Translator.trans('form.validator.last_name.required', {}, 'messages') ,
+                minlength: Translator.trans('form.validator.last_name.minLength', {}, 'messages')
             },
             "survey[DOB]": {
-                email: "{% trans %}form.validator.email.email{% endtrans %}",
-                required: "{% trans %}form.validator.email.required{% endtrans %}",
-                minlength: "{% trans %}form.validator.email.minLength{% endtrans %}"
+                dateFormat: Translator.trans('form.validator.dob.dateFormat', {}, 'messages'),
+                required: Translator.trans('form.validator.dob.required', {}, 'messages') ,
+                minlength: Translator.trans('form.validator.dob.minLength', {}, 'messages')
             }
         },
         errorPlacement: function (error, element) {

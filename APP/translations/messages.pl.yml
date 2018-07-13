@@ -17,3 +17,4 @@ main.register: Zarejestruj się
 main.login: Logowanie
 main.logout: Wyloguj
 front.survey.header: Ankieta
+form.validator.email.required: To pole jest wymagane

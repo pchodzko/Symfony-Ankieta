@@ -17,6 +17,7 @@
         "build": "encore production"
     },
     "dependencies": {
+        "bazinga-translator": "^2.6.6",
         "bootstrap": "4.1.1",
         "popper.js": "^1.14.3"
     }

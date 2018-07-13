@@ -9,7 +9,8 @@ Encore
     
         // will create public/build/app.js and public/build/app.css
     .addEntry('app', './assets/js/app.js')
-
+//    .addEntry('trans-config', './assets/translations/config.js')
+//    .addEntry('trans', './assets/translations/messages/pl.js')
     // allow legacy applications to use $/jQuery as a global variable
     .autoProvidejQuery()
 

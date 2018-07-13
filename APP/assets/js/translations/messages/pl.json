@@ -1,0 +1,3 @@
+{
+    "translations": {"pl":{"messages":{"home.nav.header":"Symfony ankieta","home.title":"Symfony ankieta","register.header":"Rejestracja","login.header":"Logowanie","backend.id":"id","backend.dob":"data urodzenia","backend.firstname":"imi\u0119","backend.lastname":"nazwisko","backend.fullname":"imi\u0119 i nazwisko","backend.username":"username","backend.createdat":"data utworzenia","backend.isactive":"aktywny","backend.action":"akcje","main.header":"Zapraszamy do udzia\u0142u w ankiecie","main.survay":"Przejd\u017a do ankiety","main.register":"Zarejestruj si\u0119","main.login":"Logowanie","main.logout":"Wyloguj","front.survey.header":"Ankieta","form.validator.email.required":"To pole jest wymagane"}}}
+}
